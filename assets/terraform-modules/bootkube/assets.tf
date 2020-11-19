@@ -108,6 +108,7 @@ locals {
     cluster_dns_service_ip = cidrhost(var.service_cidr, 10)
     cluster_domain_suffix  = var.cluster_domain_suffix
     enable_tls_bootstrap   = var.enable_tls_bootstrap
+    kubernetes_ca_cert     = base64encode(tls_self_signed_cert.kube-ca.cert_pem)
   })
 
   kubeconfig_kubelet_content = templatefile("${path.module}/resources/kubeconfig-kubelet", {

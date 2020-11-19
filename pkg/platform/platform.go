@@ -116,6 +116,8 @@ type Meta struct {
 	ExpectedNodes      int
 	Managed            bool
 	ControlplaneCharts []helm.LokomotiveChart
+	Name               string
+	ClusterName        string
 }
 
 // platforms is a collection where all platforms gets automatically registered
